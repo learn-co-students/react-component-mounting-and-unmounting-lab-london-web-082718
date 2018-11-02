@@ -50,6 +50,14 @@ class Pancake extends React.Component {
     return "raw";
   };
 
+  componentDidMount() {
+    this.startInterval()
+  }
+
+  componentWillUnmount() {
+    this.cleanUpInterval()
+  }
+
   takeItOff = () => {
     const { id } = this.props;
     const { timeCooked, flippedAt } = this.state;
